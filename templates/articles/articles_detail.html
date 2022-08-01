@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+{% block content %}
+<h1>Article detail</h1>
+
+<h3>Title: {{article_detail.title}}</h3>
+
+<h3>Auther: {{article_detail.auther}}</h3>
+
+<h5>abstract: {{article_detail.abstract}}</h5>
+
+<h5>Text: {{article_detail.text}}</h5>
+
+    <button style="float: right; margin-right: 50px" onclick="window.location.href='/articles';">
+        Back To List
+    </button>
+
+    <button onclick="window.location.href='{% url 'update_article' article_detail.pk %}';">
+        Update article
+    </button>
+    <button onclick="window.location.href='{% url 'delete_article' article_detail.pk %}';">
+        Delete article
+    </button>
+
+{% endblock content %}
